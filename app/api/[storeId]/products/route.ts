@@ -15,6 +15,7 @@ export async function POST(
     const {
       name,
       price,
+      stock,
       categoryId,
       colorId,
       sizeId,
@@ -29,6 +30,10 @@ export async function POST(
 
     if (!name) {
       return new NextResponse("Name is required", { status: 400 });
+    }
+
+    if (!stock) {
+      return new NextResponse("Stock is required", { status: 400 });
     }
 
     if (!images || !images.length) {
@@ -70,6 +75,7 @@ export async function POST(
       data: {
         name,
         price,
+        stock,
         isFeatured,
         isArchived,
         categoryId,
