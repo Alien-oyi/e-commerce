@@ -8,7 +8,7 @@ export type ProductColumn = {
     id: string
     name: string;
     price: string;
-    stock: number;
+    stock: number | null;
     category: string;
     size: string;
     color: string;
